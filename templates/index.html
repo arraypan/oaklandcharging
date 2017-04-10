@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Charging</h2>
+    {% if tacos.count() %}
+    <table class="u-full-width">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Student ID?</th>
+                <th>Device</th>
+                <th>Time and Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for taco in tacos %}
+            <tr>
+                <td>{{ taco.name }}</td>
+                <td>{{ taco.ID }}</td>
+                <td>{{ taco.Device }}</td>
+                <td>{{ taco.time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No Devices yet.</p>
+    {% endif %}
+{% endblock %}

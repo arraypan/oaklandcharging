@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <title>Oakland Charging</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <link rel="stylesheet" href="/static/css/charge.css" />
+
+</head>
+<body>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="message">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endwith %}
+
+<div class="container"><div class="row">
+
+    <header>
+        <a href="{{ url_for('index') }}"><img src="/static/images/42.jpg" height="100" /></a>
+    </header>
+
+    <div class="u-full-width">
+        <nav class="menu">
+            <a href="{{ url_for('index') }}">Home</a>
+
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('charge') }}">Add New Device</a>
+            <a href="{{ url_for('logout') }}">Log Out</a>
+            {% else %}
+            <a href="{{ url_for('login') }}">Log In</a>
+            <a href="{{ url_for('register') }}">Sign Up</a>
+            {% endif %}
+
+        </nav>
+    {% block content %}{% endblock %}
+    </div>
+
+
+
+</div></div>
+
+</body>
+</html>

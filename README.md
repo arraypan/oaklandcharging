@@ -8,6 +8,19 @@ and drop-off will now be done on a tablet.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
+# Required files
+
+```
+app.py
+models.py
+forms.py
+
+templates files
+
+static files
+```
+
+# How to run this code
 
 ### Prerequisities
 <a href="https://www.python.org/downloads/">Python 3.5 or Higher running on your local system </a> <br>
@@ -35,8 +48,8 @@ sudo python3 checkin.py
 * Skeleton - Small collection of CSS files
 * HTML and CSS
 
-## Issues
-Feel free to submit issues and enhancement requests.
+##Issues
+We test our project Locally so Feel free to submit issues and enhancement requests.
 
 ## Contributing
 
